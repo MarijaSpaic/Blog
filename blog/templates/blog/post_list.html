@@ -8,17 +8,13 @@
 			<h2> Excerpts of the somewhat sane. </h2>
 		</div>
 
-		<div>
-			<p>published: 09.02.1990 </p>
-			<h2><a href="">Post 1!!</a></h2>
-			<p>Look at the first one!!!</p>
-		</div>
-
-		<div>
-			<p>published: 10.02.1990 </p>
-			<h2><a href="">Post 2!!</a></h2>
-			<p>Look at the second one!!!</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p> {{ post.text|linebreaks }}</p>
+			</div>
+		{% endfor %}
 		
 	</body>
 </html>
